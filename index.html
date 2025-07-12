@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Anvi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffb6c1, #e6e6fa);
+      animation: gradientMove 6s infinite alternate;
+      overflow: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background: linear-gradient(135deg, #ffb6c1, #e6e6fa); }
+      100% { background: linear-gradient(135deg, #ff69b4, #dda0dd); }
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .cover h1 {
+      font-size: 36px;
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+
+    .cover p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .start-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .start-btn:hover {
+      background-color: #ff1493;
+    }
+
+    .confetti span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 4s infinite ease-in-out;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(600px) rotate(360deg);
+      }
+    }
+
+    .music-control {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>🎉 Happy Birthday Anvi! 🎉</h1>
+  <p>This greeting is just the beginning of your magical day!</p>
+  <button class="start-btn" onclick="nextPage()">Open Card</button>
+
+  <!-- Confetti Elements -->
+  <div class="confetti">
+    <span style="left: 10%; animation-delay: 0s;"></span>
+    <span style="left: 30%; animation-delay: 0.5s;"></span>
+    <span style="left: 50%; animation-delay: 1s;"></span>
+    <span style="left: 70%; animation-delay: 1.5s;"></span>
+    <span style="left: 90%; animation-delay: 0.2s;"></span>
+  </div>
+</div>
+
+<!-- Music Controls -->
+<div class="music-control" onclick="toggleMusic()">🔊</div>
+<audio id="bdayMusic" autoplay loop>
+  <source src="happy.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Placeholder for next page function
+  function nextPage() {
+    window.location.href = "page2.html";
+    // In full site: window.location.href = "page2.html";
+  }
+
+  // Music toggle
+  const music = document.getElementById("bdayMusic");
+  let isPlaying = true;
+
+  function toggleMusic() {
+    const icon = document.querySelector(".music-control");
+    if (isPlaying) {
+      music.pause();
+      icon.innerText = "🔇";
+    } else {
+      music.play();
+      icon.innerText = "🔊";
+    }
+    isPlaying = !isPlaying;
+  }
+</script>
+
+</body>
+</html>

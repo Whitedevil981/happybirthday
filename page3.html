@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 3 - You Shine</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffb6c1, #e6e6fa);
+      animation: gradientAnim 6s infinite alternate;
+      overflow: hidden;
+    }
+
+    @keyframes gradientAnim {
+      0% { background: linear-gradient(135deg, #ffb6c1, #e6e6fa); }
+      100% { background: linear-gradient(135deg, #ff69b4, #dda0dd); }
+    }
+
+    .page3 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .page3 img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 25px #ff69b4;
+      margin-bottom: 20px;
+      border: 4px solid white;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #ff69b4; }
+      100% { box-shadow: 0 0 25px #ff1493; }
+    }
+
+    .page3 h2 {
+      font-size: 26px;
+      color: #ff1493;
+      margin-bottom: 15px;
+    }
+
+    .page3 p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .next-btn {
+      margin-top: 40px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .next-btn:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page3">
+  <img src="anvi.jpg" alt="Anvi's Picture">
+  <h2>You Shine Bright ✨</h2>
+  <p>
+    Your smile is like sunlight on a rainy day,<br>
+    lighting up everyone around you.<br><br>
+    Keep glowing, Anvi — the world is better with your spark! 💖
+  </p>
+
+  <button class="next-btn" onclick="goToNext()">Next Page ➡️</button>
+</div>
+
+<script>
+  function goToNext() {
+    // Replace this with real navigation in full site
+    window.location.href = "page4.html";
+  }
+</script>
+
+</body>
+</html>

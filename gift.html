@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 5 - The Gift!</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffb6c1, #e6e6fa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .gift-box {
+      width: 150px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #444;
+      max-width: 600px;
+    }
+
+    .reveal-img {
+      width: 120px;
+      margin-top: 15px;
+      animation: riseOut 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes riseOut {
+      0% {
+        transform: translateY(30px) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-30px) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2>🏱 Click to Open Your Birthday Gift!</h2>
+
+<!-- First Gift Box -->
+<img src="gift-box-closed.png" alt="Gift Box" class="gift-box" id="firstBox" onclick="openFirstBox()">
+
+<!-- Kinder Joy Reveal -->
+<div id="firstReveal" class="hidden">
+  <img src="gift-box-open.png" class="gift-box" style="cursor: default;">
+  <img src="kinder-joy.png" alt="Kinder Joy" class="reveal-img">
+  <p class="message">Ohh sorry sorry... 😅 galti se galat box de diya.<br>Ye wala sahi box hai 👇</p>
+
+  <!-- Second Gift Box -->
+  <img src="gift-box-closed.png" alt="Real Gift Box" class="gift-box" id="secondBox" onclick="openSecondBox()">
+</div>
+
+<!-- Real Gift Reveal -->
+<div id="secondReveal" class="hidden">
+  <img src="gift-box-open.png" class="gift-box" style="cursor: default;">
+  <img src="real-gift.png" alt="Real Surprise" class="reveal-img">
+  <p class="message">Ye raha tumhara asli gift! 🎉💖<br>Hope it brought a smile to your face 😄</p>
+</div>
+
+<!-- Sound Effects -->
+<audio id="soundEffect1" src="box-open.mp3" preload="auto"></audio>
+<audio id="soundEffect2" src="surprise.mp3" preload="auto"></audio>
+
+<script>
+  function openFirstBox() {
+    document.getElementById("firstBox").classList.add("hidden");
+    document.getElementById("firstReveal").classList.remove("hidden");
+    document.getElementById("soundEffect1").play();
+  }
+
+  function openSecondBox() {
+    document.getElementById("secondBox").classList.add("hidden");
+    document.getElementById("secondReveal").classList.remove("hidden");
+    document.getElementById("soundEffect2").play();
+  }
+</script>
+
+</body>
+</html>
